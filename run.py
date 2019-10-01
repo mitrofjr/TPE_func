@@ -9,6 +9,7 @@ import uuid
 from math import exp
 from multiprocessing import Pool
 from utils import format_xyz, tmer2_gmtkn_parser, get_charges_multiplicities
+from plots import learning_curve, shap_analysis
 from hyperopt import hp, Trials, fmin, tpe, STATUS_OK
 from hyperopt.pyll import scope
 from pyscf import dft
@@ -139,6 +140,10 @@ def hyperopt_search(dataset, param_grid, n_iter, sample, trials_init):
             print(err)
             with open(trials_filename, 'rb') as f:
                 trials = pickle.load(f)
+    
+    return trials_filename
+                
+         
 
 
 HYPERPARAMETERS = {
@@ -177,4 +182,6 @@ if __name__ == '__main__':
         level=logging.INFO
     )
     
-    hyperopt_search(args.dataset, HYPERPARAMETERS, args.iters, args.batch, args.trials)
+    trials_filename = hyperopt_search(args.dataset, HYPERPARAMETERS, args.iters, args.batch, args.trials)
+    learning_curve(trials_filename, title=args.dataset)
+    shap_analysis(trials_filename, title=args.dataset)
