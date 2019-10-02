@@ -5,8 +5,11 @@ python run.py DIPCS10 -i 100 -b 10
 
 where
 DIPCS10 - name of folder with GMTKN55 (www.chemie.uni-bonn.de/pctc/mulliken-center/software/GMTKN/gmtkn55) subset
+
 i - number of iterations
+
 b - number of reactions in a batch
+
 
 Included basic functionals from libxc (www.gitlab.com/libxc/libxc)
 
