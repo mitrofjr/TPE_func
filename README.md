@@ -8,8 +8,8 @@ DIPCS10 - name of folder with GMTKN55 (www.chemie.uni-bonn.de/pctc/mulliken-cent
 i - number of iterations
 b - number of reactions in a batch
 
-Included basic functionals from libxc (gitlab.com/libxc/libxc)
+Included basic functionals from libxc (www.gitlab.com/libxc/libxc)
 
-PySCF code (github.com/pyscf/pyscf) used as a basic QC calculator
+PySCF code (www.github.com/pyscf/pyscf) used as a basic QC calculator
 
-Analisys model includes SHAP approach from (github.com/slundberg/shap)
+Analisys model includes SHAP approach from (www.github.com/slundberg/shap)
